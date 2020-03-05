@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estiloFinanca.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Nome do Projeto</title>
+</head>
+<body style = "background-color: rgb(228, 225, 225);">
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="financa.html">Contabilizar</a></li>
+        <li><a href="financa.html">Sobre</a></li>
+    
+        <li style="float:right;border: 1px;"><a class="fas fa-portrait" href="#about"> Entrar</a></li>
+        <li style="float:right"><a class="fas fa-cloud" href="#about"> Cadastrar</a></li>
+      </ul>
+        <img src="viewlogo.png" style=" height: 100px; top: 10%; position: absolute;">
+          
+    
+  
+    
+    <div style="width: 100%;height: 100%;">
+    <div id="div_bronze" style="height:250px;width: 250px;  background-color: white;float: left; position: fixed;top:10%;left: 20%; border-radius: 20px;"><center><p style="font-size: 20px;">Plano Bronze</p></center>
+     
+        <center><img src="bronze.png" style="width: 50px;height: 50px;"></center>
+     
+        <div style="color: black; margin-left: 20px;"> Esse plano so abrange a área do grande ABC e aumenta seus usuários ativos em 
+            <center><span style="font-size: 60px; color: orange;">5%</span></center>
+            
+          
+    
+        </div>
+    
+     
+    
+    </div>
+    <div id="div_prata" style="height:250px;width: 250px;  background-color: white;float: left; position: fixed;top:10%;left: 40%; border-radius: 20px;"><center><p style="font-size: 20px;">Plano Prata</p></center>
+        <center><img src="prata.png" style="width: 50px;height: 50px;"></center>
+
+        <div style="color: black; margin-left: 20px;">Abrange a cidade de São Paulo e aumenta seus usuários ativos em 
+            <center><span style="font-size: 60px; color: orange;">15%</span></center>
+            
+          
+            </div>
+    
+    
+    </div>
+    <div id="div_prata" style="height:250px;width: 250px;  background-color: white; position: fixed;top:10%;left: 60%; border-radius: 20px; "><center><p style="font-size: 20px;">Plano Ouro</p></center>
+        <center><img src="ouro.png" style="width: 50px;height: 50px;"></center>
+        <div style="color: black; margin-left: 20px;">Esse plano so abrange a área do estado de São Paulo e aumenta seuss usuários ativos em 
+            <center><span style="font-size: 60px; color: orange;">30%</span></center>
+       </div>
+    
+    
+    </div>
+    <div id="div_perguntas" style="position: absolute;top: 55%;left: 20%; width: 790px; height: 40%; background-color: white; border-radius: 20px;">
+        <div><span style="font-size: 30px;color: orange; margin: 10px;">Quantos Usuários ativos na sua aplicação?</span>
+            <input type="number" id="usuarios"placeholder="Por dia">
+        
+        
+            <br>   
+            <span style="font-size: 30px;color: orange; margin: 10px;">Quantos carros ativos?</span>
+            <input type="number" id="carro" placeholder="Frota"> 
+      
+            <select name="" id="plano">
+                <option value="escolga um plano">-Escolha um plano-</option>
+                <option value="500">Plano Bronze</option>
+                <option value="1000">Plano Prata</option>
+                <option value="2000">Plano Ouro</option>
+            </select>  </div>
+      
+          
+       
+        <br>
+        <center><div id="div_resul" style="display: none;">
+
+            <b>Por mês:</b>R$<span id="mes"></span>
+            <br>
+            <b>Custo dos aparelhos (R$30/cada):</b> R$<span id="aparelho"></span>
+            <br>
+            <b>Aumento no número de usuários(por dia):</b><span id="u"></span>
+        </div></center>
+        <br>
+        <center><button onclick="conta()"  style="border-radius: 20px; height: 40px; width: 400px; background-color: orange; color: white;">Calcular</button>
+    </div>
+</div>
+
+</body>
+</html>
+<script>
+    function conta (){
+        var total,usu,plan,total2;
+        usu = Number(usuarios.value);
+        plan = Number(plano.value);
+       total2 = Number(carro.value) * 30;
+        if(plan == 500){
+            total = usu * 0.05;
+            u.innerHTML = total.toFixed(0);
+            aparelho.innerHTML = total2;
+            mes.innerHTML = 500;
+            div_resul.style.display = 'block';
+        }
+        else if(plan == 1000){
+            total = usu * 0.15;
+            u.innerHTML = total.toFixed(0);
+            aparelho.innerHTML = total2;
+            mes.innerHTML = 1000;
+            div_resul.style.display = 'block';
+
+        }
+        else if(plan == 2000){
+            total = usu * 0.30;
+            u.innerHTML = total.toFixed(0);
+            aparelho.innerHTML = total2;
+            mes.innerHTML = 2000;
+            div_resul.style.display = 'block';
+           
+        }
+        else{
+           div_resul.style.display = 'none';
+           alert('Escolha um plano');
+        }
+
+
+    }
+</script>
